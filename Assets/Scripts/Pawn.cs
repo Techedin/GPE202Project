@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Pawn : MonoBehaviour
 {
+    //Gotta make the parent class so all the children can have cognitive functions 
     //Varible for move speed
     public float moveSpeed;
     //Varible for turn speed
@@ -30,4 +31,5 @@ public abstract class Pawn : MonoBehaviour
     public abstract void MoveBackwards();
     public abstract void MoveRight();
     public abstract void MoveLeft();
+    public abstract void Jump();
 }

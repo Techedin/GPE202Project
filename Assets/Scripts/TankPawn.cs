@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class TankPawn : Pawn
 {
-    
+    private SphereCollider groundTest;
+    private bool isTouching;
+    public Transform shootPoint;
 
     // Start is called before the first frame update
     public override void Start()
     {
-        
+
         // Run the Start() function from the parent (base) class
         base.Start();
     }
@@ -19,6 +21,9 @@ public class TankPawn : Pawn
     {
         // Run the Start() function from the parent (base) class
         base.Start();
+
+
+
     }
 
     public override void MoveForward()
@@ -31,7 +36,7 @@ public class TankPawn : Pawn
         {
             Debug.LogWarning("Warning: No Mover in TankPawn.MoveForward()!");
         }
-        
+
     }
     public override void MoveBackwards()
     {
@@ -54,13 +59,28 @@ public class TankPawn : Pawn
         {
             Debug.LogWarning("Warning: No Mover in TankPawn.MoveForward()!");
         }
-      
+
     }
     public override void MoveLeft()
     {
         if (mover != null)
         {
             mover.Rotate(-turnSpeed);
+        }
+        else
+        {
+            Debug.LogWarning("Warning: No Mover in TankPawn.MoveForward()!");
+        }
+    }
+
+    public override void Jump()
+    {
+        if (mover != null)
+        {
+            
+                //get the green(up) arrow so I can ACEND
+                mover.Move(transform.up, moveSpeed);
+
         }
         else
         {

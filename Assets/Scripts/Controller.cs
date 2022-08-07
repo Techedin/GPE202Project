@@ -7,7 +7,7 @@ public abstract class Controller : MonoBehaviour
     //refernce to our pawn
     public Pawn pawn;
 
-    // Start is called before the first frame update
+    // Initializing functions for our parent controller(the worst type of parents..Controlling)
     public virtual void Start()
     {
         
