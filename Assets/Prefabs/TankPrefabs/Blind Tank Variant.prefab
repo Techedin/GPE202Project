@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5044888184170969342
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1691453895, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: fieldOfView
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691453895, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: viewDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691453895, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: hearingDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2420644697565405030, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: a49155ad19f1a6d4cb216caeb4adf4ce, type: 2}
+    - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.690885
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.02753052
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.432254
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221887116612615859, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: m_Name
+      value: Blind Tank Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1691453895, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+--- !u!1 &8976849323047077453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4221887116612615859, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+  m_PrefabInstance: {fileID: 5044888184170969342}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5044888185725972792 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1691453894, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+  m_PrefabInstance: {fileID: 5044888184170969342}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8976849323047077453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f70fa84ef44d55499b15c0f72f09872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7051743446657593315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8976849323047077453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3debef15c7c169c4992d888096762dcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pawn: {fileID: 5044888185725972792}
+  currentState: 0
+  lastStateChangedTime: 0
+  target: {fileID: 0}
+  fleeDistance: -3
+  hearingDistance: 15
+  fieldOfView: 0
+  viewDistance: 0
+  lastHeardLocation: {fileID: 0}
+  waypoints: []
+  waypointStopDistance: 0
