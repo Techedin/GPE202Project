@@ -20,7 +20,6 @@ public class OnHit : MonoBehaviour
 
     public void OnTriggerEnter(Collider hit)
     {
-        Debug.Log(hit);
 
         //Get Health comp. from hit collider if it has one
         Health hitHealth = hit.GetComponent<Health>();

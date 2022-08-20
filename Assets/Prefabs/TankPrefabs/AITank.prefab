@@ -43,15 +43,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d45d6f8bc8db3d4589130f428b61094, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.823685
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d45d6f8bc8db3d4589130f428b61094, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.027532427
+      value: 31.211239
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d45d6f8bc8db3d4589130f428b61094, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.4736462
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d45d6f8bc8db3d4589130f428b61094, type: 3}
       propertyPath: m_LocalRotation.w
@@ -83,7 +83,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6d45d6f8bc8db3d4589130f428b61094, type: 3}
       propertyPath: m_Name
-      value: AITank 2
+      value: AITank
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d45d6f8bc8db3d4589130f428b61094, type: 3}
@@ -151,7 +151,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  turnSpeed: 60
+  sneakSpeed: 0
+  turnSpeed: 180
+  sneakTurnSpeed: 0
+  isSneaking: 0
   mover: {fileID: 0}
   shooter: {fileID: 0}
   health: {fileID: 0}
@@ -184,6 +187,7 @@ MonoBehaviour:
   viewDistance: 20
   lastHeardLocation: {fileID: 0}
   waypoints:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -228,3 +232,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeDistance: 0
+--- !u!114 &2472895288275393180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4221887116612615859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5555b86659cead45945bb2c83bfdb05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pawn: {fileID: 1691453894}

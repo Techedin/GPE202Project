@@ -24,6 +24,7 @@ public class PlayerController : Controller
             {
                 //add to active players list
                 GameManager.gameManagerInstance.players.Add(this);
+               
             }
         }
 
@@ -49,7 +50,7 @@ public class PlayerController : Controller
             //Check to see if this is in the list
             if (GameManager.gameManagerInstance.players != null)
             {
-                //add to active players list
+                //remove from active players list
                 GameManager.gameManagerInstance.players.Remove(this);
             }
         }

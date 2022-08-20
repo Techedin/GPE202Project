@@ -267,7 +267,7 @@ public class AIController : Controller
             Debug.DrawRay(pawn.transform.position, agentToTargetVector);
             Physics.Raycast(fovCheck, out RaycastHit hit, viewDistance);
         
-            if (hit.rigidbody == target.GetComponent<Rigidbody>())
+            if (hit.collider == target.GetComponent<Collider>())
             {
                 Debug.Log("player seen");
                

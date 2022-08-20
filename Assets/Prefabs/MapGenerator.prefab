@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3203617968631444465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3203617968631444463}
+  - component: {fileID: 3203617968631444462}
+  m_Layer: 0
+  m_Name: MapGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3203617968631444463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3203617968631444465}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.244754, y: -1.0563006, z: -15.316379}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3203617968631444462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3203617968631444465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 545e6ad97a93fa94ea944ba4337ff5ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridPrefabs:
+  - {fileID: 659313395679396124, guid: a09219915ee91d94ebb06e596b8c11d8, type: 3}
+  - {fileID: 485512906421907545, guid: 2696e9f6f95ad684389bef6b4b10f8c1, type: 3}
+  - {fileID: 3023293024086557107, guid: f7b5385457196e944b141ca979999b8e, type: 3}
+  - {fileID: 659313395679396124, guid: a09219915ee91d94ebb06e596b8c11d8, type: 3}
+  - {fileID: 3203617968631444465}
+  - {fileID: 2040881309326730029, guid: f94559021001f8141b480be900c4dbd6, type: 3}
+  - {fileID: 4486935965564395909, guid: 31d144121d5aed2478e98dd1ed945f0d, type: 3}
+  - {fileID: 8617430992410084584, guid: ba025e4117b24c44b81bc7e9840ab171, type: 3}
+  - {fileID: 45553786668608502, guid: 11f5039885b97c4489e8cd14a532f500, type: 3}
+  - {fileID: 4242518634111261154, guid: 2f640655ac825e749be3b15b8d165814, type: 3}
+  rows: 5
+  cols: 5
+  roomWidth: 15
+  roomHeight: 15

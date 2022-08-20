@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 683115451564467946}
   - component: {fileID: 397987991994293759}
   - component: {fileID: 878664691949212921}
+  - component: {fileID: 2753357657281287210}
   m_Layer: 0
   m_Name: PlayerTank
   m_TagString: Player
@@ -283,6 +284,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeDistance: 0
+--- !u!114 &2753357657281287210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892423590572543985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5555b86659cead45945bb2c83bfdb05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pawn: {fileID: 1621952185386955428}
 --- !u!1 &4070594315443768995
 GameObject:
   m_ObjectHideFlags: 0

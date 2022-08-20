@@ -7,21 +7,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1691453894, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: moveSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691453894, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: turnSpeed
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691453899, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0212959
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691453899, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: m_Center.y
+      value: 0.48935196
+      objectReference: {fileID: 0}
     - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.379427
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.02753052
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.109728
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -53,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4221887116612615859, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
       propertyPath: m_Name
-      value: Turret Tank
+      value: Turret Tank Variant
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1691453895, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
@@ -63,6 +79,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4221887116612615859, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
   m_PrefabInstance: {fileID: 4260687292152986419}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4260687292745462517 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1691453894, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+  m_PrefabInstance: {fileID: 4260687292152986419}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123329412135552384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f70fa84ef44d55499b15c0f72f09872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &904899489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,14 +102,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdc89b1ae6916243b02c901cab8490d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pawn: {fileID: 0}
+  pawn: {fileID: 4260687292745462517}
   currentState: 0
   lastStateChangedTime: 0
   target: {fileID: 0}
   fleeDistance: 0
   hearingDistance: 0
-  fieldOfView: 0
-  viewDistance: 0
+  fieldOfView: 90
+  viewDistance: 30
   lastHeardLocation: {fileID: 0}
   waypoints: []
   waypointStopDistance: 0
