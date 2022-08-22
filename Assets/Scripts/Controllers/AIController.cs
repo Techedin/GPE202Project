@@ -28,6 +28,16 @@ public class AIController : Controller
     public override void Start()
     {
         base.Start();
+        if (GameManager.gameManagerInstance != null)
+        {
+            //Check to see if this is in the list
+            if (GameManager.gameManagerInstance.AI!= null)
+            {
+                //add to active players list
+                GameManager.gameManagerInstance.AI.Add(this);
+
+            }
+        }
         ChangeState(AIStates.ChooseTarget);
     }
 
@@ -471,8 +481,20 @@ public class AIController : Controller
         target = healthiaintTank.gameObject;
     }
 
-  
 
+
+    public void OnDestroy()
+    {
+        if (GameManager.gameManagerInstance != null)
+        {
+            //Check to see if this is in the list
+            if (GameManager.gameManagerInstance.AI != null)
+            {
+                //remove from active players list
+                GameManager.gameManagerInstance.AI.Remove(this);
+            }
+        }
+    }
 
 
 }

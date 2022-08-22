@@ -8,8 +8,6 @@ public class TankPawn : Pawn
     private bool canShoot;
     [SerializeField] private float shootCooldown;
 
-   
-
     // Start is called before the first frame update
     public override void Start()
     {
@@ -148,6 +146,7 @@ public class TankPawn : Pawn
                 noise.volumeDistance = 15;
                 canShoot = false;
                 shootCooldown = firerate;
+                bulletSound.Play();
             }
 
 

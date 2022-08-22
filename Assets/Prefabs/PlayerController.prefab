@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pawn: {fileID: 0}
+  livesTotal: 1
   moveForwardKey: 119
   moveBackwardsKey: 115
   turnLeftKey: 97
@@ -51,3 +52,4 @@ MonoBehaviour:
   jumpKey: 32
   shootKey: 323
   sneakKey: 304
+  pointTotal: 0

@@ -29,6 +29,7 @@ public class OnHit : MonoBehaviour
         {
             hitHealth.TakeDamage(damageDealt, owner);
         }
+        
 
         //For memory reasons not personal 
         Destroy(gameObject);

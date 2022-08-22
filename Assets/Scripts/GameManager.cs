@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public List<PlayerController> players;
+    public List<AIController> AI;
+    public List<Camera> playerCameras;
     public GameObject playerSpawnObject;
 
     public MapGenerator mapGenerator;
@@ -24,6 +27,14 @@ public class GameManager : MonoBehaviour
     public GameObject playerControlPrefab;
     public GameObject tankPrefab;
 
+    //Audio
+    public AudioSource mainMenuMusic;
+    public AudioSource gameMusic;
+
+    public Rect player1;
+    public Rect player2;
+
+    public bool isSplitScreen;
     public void Awake()
     {
         //Is there a boss
@@ -51,28 +62,13 @@ public class GameManager : MonoBehaviour
     }
     public void Update()
     {
-        if (Input.GetKey(KeyCode.Alpha1))
+       
+    }
+    public void LateUpdate()
+    {
+        if(isSplitScreen == true)
         {
-            ActivateMainMenuScreen();
-        }
-        if (Input.GetKey(KeyCode.Alpha2))
-        {
-            ActivateOptionsScreen();
-        }
-        if (Input.GetKey(KeyCode.Alpha3))
-        {
-            ActivateCreditsScreen();
-
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            ActivateGameplay();
-
-        }
-        if (Input.GetKey(KeyCode.Alpha5))
-        {
-            ActivateGameOver();
-
+            SplitScreenCamera();
         }
     }
 
@@ -92,7 +88,54 @@ public class GameManager : MonoBehaviour
         GameObject newPlayerControllerHolder = Instantiate(playerControlPrefab, Vector3.zero, Quaternion.identity) as GameObject;
         Controller newPlayerController = newPlayerControllerHolder.GetComponent<Controller>();
         newPlayerController.pawn = newPawn;
+        newPawn.controller = newPlayerController;
 
+    }
+    private void SpawnSplitScreen()
+    {
+        for(int i=0; i < 2; i++)
+        {
+            GameObject newPlayerPawnHolder = Instantiate(tankPrefab, playerSpawn.position, playerSpawn.rotation) as GameObject;
+            //Grab the PC from the PC holder
+            //Grab the tank pawn
+            Pawn newPawn = newPlayerPawnHolder.GetComponent<Pawn>();
+            //Spawns a new PlayerController Holder at root scene positions and assigns it to a varible so we have a refernce to it.
+            GameObject newPlayerControllerHolder = Instantiate(playerControlPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+            Controller newPlayerController = newPlayerControllerHolder.GetComponent<Controller>();
+            //assign it so we can control the tank pawn
+            newPlayerController.pawn = newPawn;
+            newPawn.controller = newPlayerController;
+            
+      
+        }
+     
+    }
+    public void SplitScreenCamera()
+    {
+     
+            Debug.Log("Player Camera Changed");
+            player1 = new Rect(0, 0, (float)0.5, 1);
+            player2 = new Rect((float)0.5, 0, (float)0.5, 1);
+        playerCameras[0].rect = player1;
+        playerCameras[1].rect = player2;
+
+    }
+
+
+    public void RespawnPlayer(Controller playertoRespawn)
+    {
+        GameObject newPlayerPawnHolder = Instantiate(tankPrefab, playerSpawn.position, playerSpawn.rotation) as GameObject;
+        Pawn newPawn = newPlayerPawnHolder.GetComponent<Pawn>();
+        playertoRespawn.pawn = newPawn;
+        playertoRespawn.pawn.controller = playertoRespawn;
+        playertoRespawn.Start();
+        foreach(AIController aIController in AI)
+        {
+            
+            aIController.target = playertoRespawn.pawn.gameObject;
+            aIController.lastHeardLocation = aIController.target.transform;
+
+        }
     }
 
     private void DespawnPlayer(PlayerController playerController, GameObject playerGameobject)
@@ -120,10 +163,7 @@ public class GameManager : MonoBehaviour
         // Activate the title screen
         TitleScreenStateOb.SetActive(true);
         //ToDO: Make shit do things to change states
-        if (Input.GetKey(KeyCode.Alpha1))
-        {
-            ActivateMainMenuScreen();
-        }
+        mainMenuMusic.Play();
     }
     public void ActivateMainMenuScreen()
     {
@@ -167,22 +207,35 @@ public class GameManager : MonoBehaviour
     {
         // Deactivate all states
         DeactivateAllStates();
+        mainMenuMusic.Stop();
+
+
+        gameMusic.Play();
         // Activate the title screen
         GameplayStateOb.SetActive(true);
         //ToDO: Make shit do things to change states
         mapGenerator.GenerateMap();
 
-        PlayerSpawnPoint[] playerSpawns = FindObjectsOfType<PlayerSpawnPoint>();
-
-        playerSpawn = playerSpawns[Random.Range(0, playerSpawns.Length)].transform;
-
-        SpawnPlayer();
-
-        if (Input.GetKey(KeyCode.Alpha5))
+        if(isSplitScreen != true)
         {
-            ActivateGameOver();
+            PlayerSpawnPoint[] playerSpawns = FindObjectsOfType<PlayerSpawnPoint>();
 
+            playerSpawn = playerSpawns[Random.Range(0, playerSpawns.Length)].transform;
+
+            SpawnPlayer();
         }
+        else
+        {
+            PlayerSpawnPoint[] playerSpawns = FindObjectsOfType<PlayerSpawnPoint>();
+
+            playerSpawn = playerSpawns[Random.Range(0, playerSpawns.Length)].transform;
+
+            SpawnSplitScreen();
+          
+        }
+
+       
+
     }
     public void ActivateGameOver()
     {
@@ -211,6 +264,24 @@ public class GameManager : MonoBehaviour
 
     public void Quit()
     {
+        UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
+    }
+
+    public void SplitScreenBool()
+    {
+        if (isSplitScreen == true)
+        {
+            isSplitScreen = false;
+        }
+        else
+        {
+            isSplitScreen = true;
+        }
+    }
+    IEnumerator annoying()
+    {
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(1);
     }
 }

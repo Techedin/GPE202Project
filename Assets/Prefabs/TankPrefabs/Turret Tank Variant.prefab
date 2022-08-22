@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: turnSpeed
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1691453894, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 904899489}
     - target: {fileID: 1691453899, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
       propertyPath: m_Size.y
       value: 1.0212959
@@ -23,6 +27,14 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.48935196
       objectReference: {fileID: 0}
+    - target: {fileID: 3120010840710158740, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: maxHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3120010840710158740, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: ownerPawn
+      value: 
+      objectReference: {fileID: 4260687292745462517}
     - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -103,6 +115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pawn: {fileID: 4260687292745462517}
+  livesTotal: 0
+  pointTotal: 0
   currentState: 0
   lastStateChangedTime: 0
   target: {fileID: 0}

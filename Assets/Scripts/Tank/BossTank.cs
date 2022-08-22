@@ -65,6 +65,11 @@ public class BossTank : AIController
             case AIStates.Attack:
                 DoAttackState();
 
+                if (IsHasTarget() != true)
+                {
+                    ChangeState(AIStates.ChooseTarget);
+
+                }
                 if (!IsDistanceLessThan(target, 5))
                 {
                     ChangeState(AIStates.Chase);
@@ -73,26 +78,23 @@ public class BossTank : AIController
                 {
                     ChangeState(AIStates.Flee);
                 }
-                if (IsHasTarget() == false)
-                {
-                    ChangeState(AIStates.ChooseTarget);
-
-                }
+              
                 break;
 
             case AIStates.Flee:
                 DoBossEnraged();
 
+                if (IsHasTarget() != true)
+                {
+                    ChangeState(AIStates.ChooseTarget);
+
+                }
                 if (!IsDistanceLessThan(target, 25))
                 {
                     pawn.health.Heal(15);
                     ChangeState(AIStates.Guard);
                 }
-                if (IsHasTarget() == false)
-                {
-                    ChangeState(AIStates.ChooseTarget);
-
-                }
+               
                 break;
             case AIStates.ChooseTarget:
                 TargetPlayerOne();

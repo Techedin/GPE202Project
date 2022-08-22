@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : Controller
 {
@@ -13,11 +14,17 @@ public class PlayerController : Controller
     public KeyCode shootKey;
     public KeyCode sneakKey;
 
+    public Text playerStats;
+
+    public Camera playerCamera;
+   
+
     // Start is called before the first frame update
     public override void Start()
     {
+        playerCamera = pawn.gameObject.GetComponentInChildren<Camera>();
         //check for gameManager
-        if(GameManager.gameManagerInstance != null)
+        if (GameManager.gameManagerInstance != null)
         {
             //Check to see if this is in the list
             if(GameManager.gameManagerInstance.players != null)
@@ -26,9 +33,17 @@ public class PlayerController : Controller
                 GameManager.gameManagerInstance.players.Add(this);
                
             }
+            if(GameManager.gameManagerInstance.playerCameras != null)
+            {
+                GameManager.gameManagerInstance.playerCameras.Add(playerCamera);
+            }
         }
+      
 
+        playerStats = pawn.gameObject.GetComponentInChildren<Text>();
+        UpdateText();
 
+        
         // Run the Start() function from the parent (base) class
         base.Start();
     }
@@ -37,9 +52,10 @@ public class PlayerController : Controller
     // Update is called once per frame
     public override void Update()
     {
+      
         //Read my input everyframe
         ProcessInputs();
-
+        
         base.Update();
     }
 
@@ -94,4 +110,34 @@ public class PlayerController : Controller
         }
 
     }
+
+    public override void OnDied()
+    {
+        base.OnDied();
+        if(livesTotal <= 0)
+        {
+            GameManager.gameManagerInstance.ActivateGameOver();
+        }
+        else
+        {
+            pawn.health.currentHealth = pawn.health.maxHealth;
+            pawn.controller.livesTotal -= 1;
+            UpdateText();
+            GameManager.gameManagerInstance.RespawnPlayer(pawn.controller);
+        }
+
+    }
+
+    public override void AddPoints(int pointToAdd)
+    {
+        UpdateText();
+        pointTotal += pointToAdd;
+
+    }
+
+    public void UpdateText()
+    {
+        playerStats.text = "Player Lives: " + livesTotal + " Player Points: " + pointTotal;
+    }
+
 }

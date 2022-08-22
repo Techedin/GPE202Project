@@ -56,7 +56,7 @@ public class PowerupManager : MonoBehaviour
     {
         foreach (Powerup powerup in activePowerups)
         {
-            Debug.Log("test");
+           
             powerup.powerupTime -= Time.deltaTime;
             if (powerup.powerupTime <= 0)
             {

@@ -68,7 +68,7 @@ public class TurretTank : AIController
     }
     protected override void DoGuardState()
     {
-        CanSee(target);
+        
         pawn.MoveLeft();
     }
 

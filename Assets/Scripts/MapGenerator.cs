@@ -137,4 +137,16 @@ public class MapGenerator : MonoBehaviour
         instantiatedRooms.Clear();
     }
 
+    public void changeBool()
+    {
+        if(isMapoftheDay == true)
+        {
+            isMapoftheDay = false;
+        }
+        else
+        {
+            isMapoftheDay = true;
+        }
+    }
+
 }

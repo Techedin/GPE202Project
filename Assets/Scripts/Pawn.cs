@@ -20,7 +20,11 @@ public abstract class Pawn : MonoBehaviour
     //Health Comp
     public Health health;
 
+    public Controller controller;
+
     public NoiseMaker noise;
+
+    public AudioSource bulletSound;
 
     public GameObject bulletPrefab;
     public float bulletForce;
@@ -38,7 +42,8 @@ public abstract class Pawn : MonoBehaviour
         health = GetComponent<Health>();
 
         noise = GetComponent<NoiseMaker>();
-       
+
+        
     }
 
     // Update is called once per frame

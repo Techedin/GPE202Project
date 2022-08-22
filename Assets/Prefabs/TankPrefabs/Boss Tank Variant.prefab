@@ -12,6 +12,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1691453894, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 2439199810990332392}
+    - target: {fileID: 1691453894, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
       propertyPath: damageDealt
       value: 10
       objectReference: {fileID: 0}
@@ -23,6 +27,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3120010840710158740, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
+      propertyPath: ownerPawn
+      value: 
+      objectReference: {fileID: 6914937496489334820}
     - target: {fileID: 3593018570026411017, guid: 66baf3f8e6481bd46ab2bb5a60e238bb, type: 3}
       propertyPath: m_RootOrder
       value: 0
